@@ -19,6 +19,10 @@
   {
     "url": "https://github.com/frappe/webshop",
     "branch": "version-15"
+  },
+  {
+    "url": "https://github.com/frappe/newsletter",
+    "branch": "develop"
   }
 ]
 ```
