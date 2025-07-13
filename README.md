@@ -41,3 +41,14 @@ echo -n ${APPS_JSON_BASE64} | base64 -d > apps-test-output.json
 git clone https://github.com/frappe/frappe_docker
 cd frappe_docker
 ```
+
+### Build Image
+
+```shell
+docker build \
+  --build-arg=FRAPPE_PATH=https://github.com/frappe/frappe \
+  --build-arg=FRAPPE_BRANCH=version-15 \
+  --build-arg=APPS_JSON_BASE64=$APPS_JSON_BASE64 \
+  --tag=ghcr.io/stevenuster/erpnext/erpnext:latest \
+  --file=images/layered/Containerfile .
+```
