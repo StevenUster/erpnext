@@ -35,14 +35,14 @@ export APPS_JSON_BASE64=$(base64 -w 0 ./apps.json)
 echo -n ${APPS_JSON_BASE64} | base64 -d > apps-test-output.json
 ```
 
-### Clone Repo
+### Clone repo
 
 ```shell
 git clone https://github.com/frappe/frappe_docker
 cd frappe_docker
 ```
 
-### Build Image
+### Build image
 
 ```shell
 docker build \
@@ -51,4 +51,10 @@ docker build \
   --build-arg=APPS_JSON_BASE64=$APPS_JSON_BASE64 \
   --tag=ghcr.io/stevenuster/erpnext/erpnext:latest \
   --file=images/layered/Containerfile .
+```
+
+### Push image
+
+```shell
+docker push ghcr.io/stevenuster/erpnext/erpnext:latest
 ```
