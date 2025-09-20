@@ -1,27 +1,8 @@
 # ERPnext + Modules
 
-### Create app.json
+### Update apps.json
 
-```json
-[
-  {
-    "url": "https://github.com/frappe/erpnext",
-    "branch": "version-15"
-  },
-  {
-    "url": "https://github.com/frappe/payments",
-    "branch": "version-15"
-  },
-  {
-    "url": "https://github.com/frappe/hrms",
-    "branch": "version-15"
-  },
-  {
-    "url": "https://github.com/frappe/webshop",
-    "branch": "version-15"
-  }
-]
-```
+Add all modules you want to install to erpnext in the apps.json file.
 
 ### Export ENV
 
@@ -43,6 +24,17 @@ cd frappe_docker
 ```
 
 ### Build image
+
+```shell
+docker build \
+  --build-arg FRAPPE_PATH=https://github.com/frappe/frappe \
+  --build-arg FRAPPE_BRANCH=version-15 \
+  --build-arg APPS_JSON_BASE64=$APPS_JSON_BASE64 \
+  --tag ghcr.io/stevenuster/erpnext/erpnext:latest-amd64 \
+  --file images/layered/Containerfile .
+```
+
+### Optional: multi-platform build image
 
 ```shell
 # Build and push amd64 image
