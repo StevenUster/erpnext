@@ -14,5 +14,21 @@
   {
     "url": "https://github.com/frappe/webshop",
     "branch": "version-15"
+  },
+  {
+    "url": "https://github.com/alyf-de/eu_einvoice",
+    "branch": "version-15"
+  },
+  {
+    "url": "https://github.com/alyf-de/erpnext_germany.git",
+    "branch": "version-15"
+  },
+  {
+    "url": "https://github.com/alyf-de/pdf_on_submit.git",
+    "branch": "version-15"
+  },
+  {
+    "url": "https://github.com/alyf-de/erpnext_datev.git",
+    "branch": "version-15"
   }
 ]
