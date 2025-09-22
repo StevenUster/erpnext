@@ -30,7 +30,7 @@ docker build \
   --build-arg FRAPPE_PATH=https://github.com/frappe/frappe \
   --build-arg FRAPPE_BRANCH=version-15 \
   --build-arg APPS_JSON_BASE64=$APPS_JSON_BASE64 \
-  --tag ghcr.io/stevenuster/erpnext/erpnext:latest-amd64 \
+  --tag ghcr.io/stevenuster/erpnext/erpnext:latest-germanized-amd64 \
   --file images/layered/Containerfile .
 ```
 
@@ -43,7 +43,7 @@ docker buildx build \
   --build-arg FRAPPE_PATH=https://github.com/frappe/frappe \
   --build-arg FRAPPE_BRANCH=version-15 \
   --build-arg APPS_JSON_BASE64=$APPS_JSON_BASE64 \
-  --tag ghcr.io/stevenuster/erpnext/erpnext:latest-amd64 \
+  --tag ghcr.io/stevenuster/erpnext/erpnext:latest-germanized-amd64 \
   --file images/layered/Containerfile \
   --push .
 ```
@@ -55,7 +55,7 @@ docker buildx build \
   --build-arg FRAPPE_PATH=https://github.com/frappe/frappe \
   --build-arg FRAPPE_BRANCH=version-15 \
   --build-arg APPS_JSON_BASE64=$APPS_JSON_BASE64 \
-  --tag ghcr.io/stevenuster/erpnext/erpnext:latest-arm64 \
+  --tag ghcr.io/stevenuster/erpnext/erpnext:latest-germanized-arm64 \
   --file images/layered/Containerfile \
   --push .
 ```
@@ -63,13 +63,13 @@ docker buildx build \
 ### Create manifest
 
 ```shell
-docker manifest create ghcr.io/stevenuster/erpnext/erpnext:latest \
-  --amend ghcr.io/stevenuster/erpnext/erpnext:latest-amd64 \
-  --amend ghcr.io/stevenuster/erpnext/erpnext:latest-arm64
+docker manifest create ghcr.io/stevenuster/erpnext/erpnext:latest-germanized \
+  --amend ghcr.io/stevenuster/erpnext/erpnext:latest-germanized-amd64 \
+  --amend ghcr.io/stevenuster/erpnext/erpnext:latest-germanized-arm64
 ```
 
 ### Push manifest
 
 ```shell
-docker manifest push ghcr.io/stevenuster/erpnext/erpnext:latest
+docker manifest push ghcr.io/stevenuster/erpnext/erpnext:latest-germanized
 ```
